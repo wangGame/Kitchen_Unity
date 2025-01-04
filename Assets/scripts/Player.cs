@@ -4,7 +4,7 @@ using UnityEditor.PackageManager;
 using UnityEngine;
 using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
-public class Player : MonoBehaviour
+public class Player : KitchObjectHold
 {
     [SerializeField]
     private float speed;
