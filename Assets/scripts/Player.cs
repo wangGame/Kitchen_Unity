@@ -6,6 +6,7 @@ using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCou
 
 public class Player : KitchObjectHold
 {
+    public static Player Instance { get; private set; } 
     [SerializeField]
     private float speed;
     [SerializeField]
@@ -15,8 +16,13 @@ public class Player : KitchObjectHold
     private GameInput gameInput;
     [SerializeField]
     private LayerMask layerMask;
-    private ClearCounter clearCounter;
+    //他现在要转移的是全部是柜台了  而不仅仅是某一个
+    private BaseCounter clearCounter;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         
@@ -25,9 +31,10 @@ public class Player : KitchObjectHold
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(this.clearCounter);
         if (Input.GetKeyDown(KeyCode.E))
         {
-            this.clearCounter.Interact();
+            this.clearCounter?.Interact(this);
         }
         HandInteraction();
 
@@ -77,7 +84,7 @@ public class Player : KitchObjectHold
          */
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hitInfo, 2, layerMask))
         {
-            if (hitInfo.transform.TryGetComponent<ClearCounter>(out ClearCounter counter))
+            if (hitInfo.transform.TryGetComponent<BaseCounter>(out BaseCounter counter))
             {
                 SetClearCounter(counter);
             }
@@ -91,10 +98,8 @@ public class Player : KitchObjectHold
         }
     }
 
-    public void SetClearCounter(ClearCounter clearCounter) {
-        if (clearCounter == null) {
-            return;
-        }
+    public void SetClearCounter(BaseCounter clearCounter) {
+       
         if (this.clearCounter != clearCounter) {
             this.clearCounter?.UnSelectCounter();
             this.clearCounter = clearCounter;

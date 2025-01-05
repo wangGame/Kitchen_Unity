@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ * 当前持有，不仅仅是用户会持有，并且柜台也持有
+ */
 public class KitchObjectHold : MonoBehaviour
 {
     //顶部  就是持有kitch的位置
@@ -15,13 +18,16 @@ public class KitchObjectHold : MonoBehaviour
         return kitchObject;
     }
 
+    public bool IsHaveKitch() { 
+        return kitchObject != null;
+    }
 
     public void SetKitchObject()
     {
         this.kitchObject = null;
     }
 
-
+    //转移方法
     public void TranforKitchObject(KitchObjectHold target, KitchObjectHold source)
     {
         if (source != null)
@@ -37,10 +43,6 @@ public class KitchObjectHold : MonoBehaviour
                         target.AddKitchenObject(source.GetKitchObject());
                         source.SetKitchObject();
                     }
-                    else
-                    {
-                        Debug.Log("已经有了");
-                    }
                 }
             }
         }
@@ -49,7 +51,6 @@ public class KitchObjectHold : MonoBehaviour
             return;
         }
     }
-
 
     public void AddKitchenObject(KitchObject kitchObject)
     {
