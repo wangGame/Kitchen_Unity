@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float playerRotationSpeed;
     private bool isWalk;
+    [SerializeField]
+    private LayerMask counterLayerMask;
+    private ClearCounter selectedCounter;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +22,28 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        HandleInput();
+    }
+
+    private void HandleInput()
+    {
+        if (Input.GetKeyDown(KeyCode.E)) {
+            HandleInteraction();
+        }
     }
 
     private void FixedUpdate()
     {
+        HandMovement();
+    }
+
+    public bool IsWalk {
+        get {
+            return isWalk; 
+        } 
+    }
+
+    private void HandMovement() {
         //水平
         float horizonTal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -45,9 +66,42 @@ public class Player : MonoBehaviour
         }
     }
 
-    public bool IsWalk {
-        get {
-            return isWalk; 
-        } 
-    }  
+    public void HandleInteraction() {
+        //检测前方是否存在柜台
+        bool isCollide = Physics.Raycast(transform.position,transform.forward,out RaycastHit raycastHit,2, counterLayerMask );
+        if (isCollide)
+        {
+            //Debug.Log(raycastHit.collider.gameObject);
+            raycastHit.collider.gameObject.TryGetComponent<ClearCounter>(out ClearCounter clearCounter);
+            if (clearCounter != null)
+            {
+                //clearCounter.Interact();
+                SetSelectedCounter(clearCounter);
+            }
+            else
+            {
+                SetSelectedCounter(null);
+            }
+        }
+        else {
+            SetSelectedCounter(null);
+        }
+    }
+
+    public void SetSelectedCounter(ClearCounter clearCounter) {
+        if (clearCounter != null) {
+            if (this.selectedCounter != clearCounter)
+            {
+                if (selectedCounter != null)
+                {
+                    selectedCounter.CanCelSelected();
+                }
+                clearCounter.SelectCounter();
+                clearCounter.Interact();
+            }
+            this.selectedCounter = clearCounter;
+        }
+    }
+
+   
 }  
