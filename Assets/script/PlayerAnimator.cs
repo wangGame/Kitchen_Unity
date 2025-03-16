@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
+    private const string IS_WALKING = "isWalk";
     private Animator anim;
     [SerializeField]
     private Player player;
@@ -16,6 +17,6 @@ public class PlayerAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        anim.SetBool("isWalk",player.IsWalk);
+        anim.SetBool(IS_WALKING,player.IsWalk);
     }
 }
