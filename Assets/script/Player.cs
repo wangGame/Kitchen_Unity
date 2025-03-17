@@ -90,15 +90,14 @@ public class Player : MonoBehaviour
 
     public void SetSelectedCounter(ClearCounter clearCounter) {
         if (clearCounter != null) {
-            if (this.selectedCounter != clearCounter)
-            {
+            
                 if (selectedCounter != null)
                 {
                     selectedCounter.CanCelSelected();
                 }
                 clearCounter.SelectCounter();
                 clearCounter.Interact();
-            }
+            
             this.selectedCounter = clearCounter;
         }
     }
