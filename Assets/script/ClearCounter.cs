@@ -9,7 +9,16 @@ public class ClearCounter : BaseCounter
 {
 
     public override void Interact(Player player) {
-       
+        if (player.GetKitchObjectController() == null) {
+            if (GetKitchObjectController() != null) {
+                TransferKitchenObject(this,player);
+            }
+            return;
+        }
+        if (GetKitchObjectController() != null) { 
+            return;
+        }
+        TransferKitchenObject(player, this);
     }
 
      

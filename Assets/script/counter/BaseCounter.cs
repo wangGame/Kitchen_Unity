@@ -21,4 +21,11 @@ public class BaseCounter : KitchenObjectHolder
         selectedCounter.SetActive(false);
     }
 
+
+    public void CreateKitchenObject(KitchenObject kitchen)
+    {
+        kitchObjectController = GameObject.Instantiate(kitchen.prefab, topPoint.transform).GetComponent<KitchObjectController>();
+        kitchObjectController.transform.localPosition = Vector3.zero;
+    }
+
 }

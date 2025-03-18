@@ -69,6 +69,7 @@
     <Compile Include="Assets\script\test\DataScript.cs" />
     <Compile Include="Assets\script\PlayerAnimator.cs" />
     <Compile Include="Assets\script\KitchObjectController.cs" />
+    <Compile Include="Assets\script\animation\ContainerAnimation.cs" />
     <Compile Include="Assets\script\data\KitchenObject.cs" />
     <Compile Include="Assets\script\KitchenObjectHolder.cs" />
   </ItemGroup>

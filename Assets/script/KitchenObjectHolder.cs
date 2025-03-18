@@ -46,4 +46,5 @@ public class KitchenObjectHolder : MonoBehaviour
         kitchObjectController.transform.localPosition = Vector3.zero;
         SetKitchObjectController(kitchObjectController);
     }
+
 }
