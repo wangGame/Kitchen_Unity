@@ -13,7 +13,7 @@ public class Player : KitchenObjectHolder
     private bool isWalk;
     [SerializeField]
     private LayerMask counterLayerMask;
-    private ClearCounter selectedCounter;
+    private BaseCounter selectedCounter;
 
     private void Awake()
     {
@@ -78,7 +78,7 @@ public class Player : KitchenObjectHolder
         if (isCollide)
         {
             //Debug.Log(raycastHit.collider.gameObject);
-            raycastHit.collider.gameObject.TryGetComponent<ClearCounter>(out ClearCounter clearCounter);
+            raycastHit.collider.gameObject.TryGetComponent<BaseCounter>(out BaseCounter clearCounter);
             if (clearCounter != null)
             {
                 //clearCounter.Interact();
@@ -94,7 +94,7 @@ public class Player : KitchenObjectHolder
         }
     }
 
-    public void SetSelectedCounter(ClearCounter clearCounter) {
+    public void SetSelectedCounter(BaseCounter clearCounter) {
         if (clearCounter != null) {
             
                 if (selectedCounter != null)
@@ -102,7 +102,7 @@ public class Player : KitchenObjectHolder
                     selectedCounter.CanCelSelected();
                 }
                 clearCounter.SelectCounter();
-                clearCounter.Interact();
+                clearCounter.Interact(this);
             
             this.selectedCounter = clearCounter;
         }

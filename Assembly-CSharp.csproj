@@ -63,7 +63,9 @@
   <ItemGroup>
     <Compile Include="Assets\script\ClearCounter.cs" />
     <Compile Include="Assets\script\test\Bean.cs" />
+    <Compile Include="Assets\script\counter\BaseCounter.cs" />
     <Compile Include="Assets\script\Player.cs" />
+    <Compile Include="Assets\script\Container\ContainerCounter.cs" />
     <Compile Include="Assets\script\test\DataScript.cs" />
     <Compile Include="Assets\script\PlayerAnimator.cs" />
     <Compile Include="Assets\script\KitchObjectController.cs" />
