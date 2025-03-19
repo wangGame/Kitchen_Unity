@@ -36,6 +36,17 @@ public class Player : KitchenObjectHolder
         if (Input.GetKeyDown(KeyCode.E)) {
             HandleInteraction();
         }
+        if (Input.GetKeyDown(KeyCode.S)) {
+            OpterateAction();
+        }
+    }
+
+    private void OpterateAction()
+    {
+        if(this.selectedCounter != null)
+        {
+            selectedCounter.InteractOperate(this);
+        }
     }
 
     private void FixedUpdate()
