@@ -50,7 +50,6 @@ public class KitchenObjectHolder : MonoBehaviour
 
     public void OnDestroyKitchen()
     {
-        Debug.Log("xxxxxxxxxxxxxxxxxxxxxxxx");
         Destroy(kitchObjectController.gameObject);
      
         this.kitchObjectController = null;
