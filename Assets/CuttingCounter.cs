@@ -6,8 +6,9 @@ public class CuttingCounter : ClearCounter
 {
     [SerializeField]
     private CuttingRecipeListSao cuttingRecipeList;
-    [SerializeField]
     private int cuttingCount;
+    [SerializeField]
+    private ProgressBarUI progressBarUI;
 
     public override void InteractOperate(Player player)
     {
@@ -16,6 +17,7 @@ public class CuttingCounter : ClearCounter
             CuttingRecipe output =  cuttingRecipeList.cuttingRecipe(kitchObjectController.GetKitchenObject());
             if (output != null) {
                 cuttingCount++;
+                progressBarUI.UpdateProgress((float)(cuttingCount)/output.cuttingCountMax);
                 if (cuttingCount >= output.cuttingCountMax)
                 {
                     OnDestroyKitchen();

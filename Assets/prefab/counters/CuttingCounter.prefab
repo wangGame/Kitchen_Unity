@@ -176,7 +176,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
@@ -268,13 +268,15 @@ GameObject:
   - component: {fileID: 3358985127995824413}
   - component: {fileID: 7689677525670512315}
   - component: {fileID: 622394093915327001}
+  - component: {fileID: 9202049210649616257}
+  - component: {fileID: 7255802107256539159}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: ProgressBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8840023154366236939
 RectTransform:
   m_ObjectHideFlags: 0
@@ -360,6 +362,31 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &9202049210649616257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8252247969590601325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e91ddc52023e7f84dbb2c4f9768742fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  processImage: {fileID: 8017936325670863621}
+--- !u!114 &7255802107256539159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8252247969590601325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d457e43d880ac146a149c489a9b09b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3591352642321461242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -544,7 +571,7 @@ MonoBehaviour:
   topPoint: {fileID: 3017048818329329391}
   selectedCounter: {fileID: 7236738452786164425}
   cuttingRecipeList: {fileID: 0}
-  cuttingCount: 0
+  progressBarUI: {fileID: 9202049210649616257}
 --- !u!4 &8653378015602210783 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5089744579887604296, guid: 1a65cc5a7b810ab4da2cb422c0f1300f,
