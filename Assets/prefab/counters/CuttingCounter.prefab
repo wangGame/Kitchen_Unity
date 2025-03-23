@@ -453,8 +453,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4589716710238282922, guid: d72bee846803d074784ffb8f64e993ca,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2480281956296827158}
   m_SourcePrefab: {fileID: 100100000, guid: d72bee846803d074784ffb8f64e993ca, type: 3}
+--- !u!1 &1037797365539818320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4589716710238282922, guid: d72bee846803d074784ffb8f64e993ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 3591352642321461242}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2480281956296827158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037797365539818320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43758b90a80fef7499132d5b62db50a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1037797365539818321 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4589716710238282923, guid: d72bee846803d074784ffb8f64e993ca,
@@ -572,6 +594,7 @@ MonoBehaviour:
   selectedCounter: {fileID: 7236738452786164425}
   cuttingRecipeList: {fileID: 0}
   progressBarUI: {fileID: 9202049210649616257}
+  cuttingCounterAnimation: {fileID: 2480281956296827158}
 --- !u!4 &8653378015602210783 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5089744579887604296, guid: 1a65cc5a7b810ab4da2cb422c0f1300f,

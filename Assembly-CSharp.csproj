@@ -73,8 +73,10 @@
     <Compile Include="Assets\script\PlayerAnimator.cs" />
     <Compile Include="Assets\script\KitchObjectController.cs" />
     <Compile Include="Assets\script\data\CuttingRecipeListSo.cs" />
+    <Compile Include="Assets\script\Container\StoveCounter.cs" />
     <Compile Include="Assets\script\animation\ContainerAnimation.cs" />
     <Compile Include="Assets\script\Container\TrashCounter.cs" />
+    <Compile Include="Assets\script\animation\CuttingCounterAnimation.cs" />
     <Compile Include="Assets\script\data\KitchenObject.cs" />
     <Compile Include="Assets\script\KitchenObjectHolder.cs" />
   </ItemGroup>

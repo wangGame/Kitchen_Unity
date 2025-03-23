@@ -9,6 +9,8 @@ public class CuttingCounter : ClearCounter
     private int cuttingCount;
     [SerializeField]
     private ProgressBarUI progressBarUI;
+    [SerializeField]
+    private CuttingCounterAnimation cuttingCounterAnimation;
 
     public override void InteractOperate(Player player)
     {
@@ -16,8 +18,10 @@ public class CuttingCounter : ClearCounter
             //´æÔÚÊ³²Ä
             CuttingRecipe output =  cuttingRecipeList.cuttingRecipe(kitchObjectController.GetKitchenObject());
             if (output != null) {
-                cuttingCount++;
+
+                Cut();
                 progressBarUI.UpdateProgress((float)(cuttingCount)/output.cuttingCountMax);
+
                 if (cuttingCount >= output.cuttingCountMax)
                 {
                     OnDestroyKitchen();
@@ -25,5 +29,10 @@ public class CuttingCounter : ClearCounter
                 }
             }
         }
+    }
+
+    public void Cut() {
+        cuttingCount++;
+        cuttingCounterAnimation.PlayCut();
     }
 }
