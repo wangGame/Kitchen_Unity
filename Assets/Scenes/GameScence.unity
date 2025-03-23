@@ -1170,6 +1170,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d4b7382496690854d8bbac1757f8d372,
         type: 2}
+    - target: {fileID: 3849742094393924807, guid: 3b8dfa4f053d702438af533ea3e04ace,
+        type: 3}
+      propertyPath: cuttingRecipeList
+      value: 
+      objectReference: {fileID: 11400000, guid: d4b7382496690854d8bbac1757f8d372,
+        type: 2}
     - target: {fileID: 6605309317488304119, guid: 3b8dfa4f053d702438af533ea3e04ace,
         type: 3}
       propertyPath: m_Name

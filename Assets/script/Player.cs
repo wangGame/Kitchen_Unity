@@ -36,7 +36,7 @@ public class Player : KitchenObjectHolder
         if (Input.GetKeyDown(KeyCode.E)) {
             HandleInteraction();
         }
-        if (Input.GetKeyDown(KeyCode.S)) {
+        if (Input.GetKeyDown(KeyCode.C)) {
             OpterateAction();
         }
     }

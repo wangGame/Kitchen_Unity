@@ -5,16 +5,22 @@ using UnityEngine;
 public class CuttingCounter : ClearCounter
 {
     [SerializeField]
-    private CuttingRecipeListSao CuttingRecipeList;
+    private CuttingRecipeListSao cuttingRecipeList;
+    [SerializeField]
+    private int cuttingCount;
 
     public override void InteractOperate(Player player)
     {
         if (GetKitchObjectController() != null) {
             //´æÔÚÊ³²Ä
-            KitchenObject output =  CuttingRecipeList.getOutput(kitchObjectController.GetKitchenObject());
+            CuttingRecipe output =  cuttingRecipeList.cuttingRecipe(kitchObjectController.GetKitchenObject());
             if (output != null) {
-                OnDestroyKitchen();
-                CreateKitchenObject(output);
+                cuttingCount++;
+                if (cuttingCount >= output.cuttingCountMax)
+                {
+                    OnDestroyKitchen();
+                    CreateKitchenObject(output.output);
+                }
             }
         }
     }
