@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class CuttingCounter : ClearCounter
 {
-    [SerializeField] KitchenObject kitchenObject;
+    [SerializeField]
+    private CuttingRecipeListSao CuttingRecipeList;
+
     public override void InteractOperate(Player player)
     {
         if (GetKitchObjectController() != null) {
             //´æÔÚÊ³²Ä
-            OnDestroyKitchen();
-            CreateKitchenObject(kitchenObject);
+            KitchenObject output =  CuttingRecipeList.getOutput(kitchObjectController.GetKitchenObject());
+            if (output != null) {
+                OnDestroyKitchen();
+                CreateKitchenObject(output);
+            }
         }
     }
 }
