@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoveCounter : BaseCounter
+public class StoveCounter : ClearCounter
 {
     public override void Interact(Player player)
     {

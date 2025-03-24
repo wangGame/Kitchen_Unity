@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\script\ClearCounter.cs" />
     <Compile Include="Assets\script\test\Bean.cs" />
+    <Compile Include="Assets\script\data\FryingRecipeListSO.cs" />
     <Compile Include="Assets\script\Player.cs" />
     <Compile Include="Assets\script\Container\ContainerCounter.cs" />
     <Compile Include="Assets\script\ui\ProgressBarUI.cs" />
