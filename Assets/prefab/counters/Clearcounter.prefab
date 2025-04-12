@@ -46,6 +46,11 @@ PrefabInstance:
       objectReference: {fileID: 3085836648783059399}
     - target: {fileID: -5399325669533667333, guid: 1a65cc5a7b810ab4da2cb422c0f1300f,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5399325669533667333, guid: 1a65cc5a7b810ab4da2cb422c0f1300f,
+        type: 3}
       propertyPath: kitchenObject
       value: 
       objectReference: {fileID: 71597013009328158, guid: 494b51b814ee94d4eb90f0095533041b,
@@ -135,7 +140,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5399325669533667333, guid: 1a65cc5a7b810ab4da2cb422c0f1300f, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5192514923140922933, guid: 1a65cc5a7b810ab4da2cb422c0f1300f, type: 3}
     m_AddedGameObjects:
@@ -151,7 +157,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2545305034782740619}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7286361424475490912, guid: 1a65cc5a7b810ab4da2cb422c0f1300f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3649766309774120768}
   m_SourcePrefab: {fileID: 100100000, guid: 1a65cc5a7b810ab4da2cb422c0f1300f, type: 3}
 --- !u!4 &5350895363007877362 stripped
 Transform:
@@ -159,6 +169,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 927835264925381306}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7637557813699262682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7286361424475490912, guid: 1a65cc5a7b810ab4da2cb422c0f1300f,
+    type: 3}
+  m_PrefabInstance: {fileID: 927835264925381306}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3649766309774120768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637557813699262682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e29169e0bcda6ba49946189787cf87f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topPoint: {fileID: 3085836648783059399}
+  selectedCounter: {fileID: 7114308951626209136}
 --- !u!1001 &4006166165479363917
 PrefabInstance:
   m_ObjectHideFlags: 0
