@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\script\ClearCounter.cs" />
+    <Compile Include="Assets\PlateComplete.cs" />
     <Compile Include="Assets\script\test\Bean.cs" />
     <Compile Include="Assets\script\data\FryingRecipeListSO.cs" />
     <Compile Include="Assets\script\Player.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Assets\script\Container\CuttingCounter.cs" />
     <Compile Include="Assets\script\LookAtCamera.cs" />
     <Compile Include="Assets\script\test\DataScript.cs" />
+    <Compile Include="Assets\script\Container\PlateKitchenObject.cs" />
     <Compile Include="Assets\script\Container\BaseCounter.cs" />
     <Compile Include="Assets\script\PlayerAnimator.cs" />
     <Compile Include="Assets\script\Collision.cs" />

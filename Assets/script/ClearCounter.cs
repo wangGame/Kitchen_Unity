@@ -9,18 +9,53 @@ public class ClearCounter : BaseCounter
 {
 
     public override void Interact(Player player) {
-        if (player.GetKitchObjectController() == null) {
-           
+        //if (player.GetKitchObjectController() == null) {
+        //    if (GetKitchObjectController() != null)
+        //    {
+        //        TransferKitchenObject(this, player);
+        //    }
+        //    return;
+        //}
+        //if (GetKitchObjectController() != null) { 
+        //    return;
+        //}
+        //TransferKitchenObject(player, this);
 
-            if (GetKitchObjectController() != null) {
-                TransferKitchenObject(this,player);
+        {
+            // ÷…œŒ™null
+            if (player.GetKitchObjectController() == null)
+            {
+                if (GetKitchObjectController() != null)
+                {
+                    TransferKitchenObject(this, player);
+                }
+                return;
             }
-            return;
+            if (GetKitchObjectController() != null)
+            {
+                if (player.GetKitchObjectController().TryGetComponent<PlateKitchenObject>(out PlateKitchenObject plateKitchenObject))
+                {
+                    if (plateKitchenObject
+                        .AddKitchenObjectSO(GetKitchObjectController().GetKitchenObject()))
+                    {
+                        OnDestroyKitchen();
+
+                    }
+                }
+                else {
+                    if (GetKitchObjectController().TryGetComponent<PlateKitchenObject>(out PlateKitchenObject plate)) {
+                        if (plate
+                            .AddKitchenObjectSO(player.GetKitchObjectController().GetKitchenObject()))
+                        {
+                            player.OnDestroyKitchen();
+
+                        }
+                    }
+                }
+                return;
+            }
+            TransferKitchenObject(player, this);
         }
-        if (GetKitchObjectController() != null) { 
-            return;
-        }
-        TransferKitchenObject(player, this);
     }
 
      
