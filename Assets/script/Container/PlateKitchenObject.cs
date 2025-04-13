@@ -23,4 +23,8 @@ public class PlateKitchenObject : KitchObjectController
         kitchensList.Add(kitchen);
         return true;
     }
+
+    public List<KitchenObject> GetKitchenObjects() {
+        return kitchensList;
+    }
 }

@@ -9,9 +9,10 @@ public class DeliveryCounter : ClearCounter
         KitchObjectController kitchen =  player.GetKitchObjectController();
         if (kitchen != null && kitchen.TryGetComponent<PlateKitchenObject>(out PlateKitchenObject plateKitchenObject)) {
             //上到菜是否正确
-            player.OnDestroyKitchen();
+            //
             //销毁
-
+            OrderManager.instance.DeliveryRecipe(plateKitchenObject);
+            player.OnDestroyKitchen();
         }
     }
 }
